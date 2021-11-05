@@ -15,16 +15,15 @@
 
 \pagestyle{headings}
 
-\title{Názov\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2015/16, vedenie: Meno Priezvisko}} % meno a priezvisko vyučujúceho na cvičeniach
+\title{Virtuálna realita v priemysle\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2021/22, vedenie: Vladimír Mlynarovič}} % meno a priezvisko vyučujúceho na cvičeniach
 
-\author{Meno Priezvisko\\[2pt]
+\author{Samuel Uher\\[2pt]
 	{\small Slovenská technická univerzita v Bratislave}\\
 	{\small Fakulta informatiky a informačných technológií}\\
-	{\small \texttt{...@stuba.sk}}
+	{\small \texttt{xuhers@stuba.sk}}
 	}
 
-\date{\small 30. september 2015} % upravte
-
+\date{\small 1.november 2021} % upravte
 
 
 \begin{document}
@@ -32,87 +31,161 @@
 \maketitle
 
 \begin{abstract}
-\ldots
+Cieľ výskumu: Úvod čo je Virtuálna realita, samotný výskum je zameraný na priebeh návrhu samotného VR programu, 
+určenie úlohy simulačnej technológie, poukázať na vzdelávací proces s cieľom poukázania 
+na efektívnosť v modernej dobe.\vspace{5mm}
+
+Predmet výskumu: simulačné technológie virtuálnej reality ako komponent
+vzdelávacieho procesu. Teoretické metódy obsahujúce analýzu, 
+vedecké zdroje. empirické metódy zahŕňajúce štúdium a pozorovanie
+vzdelávacieho procesu. 
+
+
+%Z obr.~\ref{f:rozhod} je všetko jasné. 
 \end{abstract}
 
 
 
 \section{Úvod}
+V úvode tohto článku si zadefinujeme pár pojmov, uvedieme čitateľa a vysvetlíme čo je to virtuálna realita. Zameriame sa na pár programov, 
+ktoré pracujú s odvetviami samotnej virtuálnej reality, na čo sa dané programy primarizujú a určíme v ktorých profesiách sa využíva virtuálna realita.\vspace{5mm}
 
-Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
-
-Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
-Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
-Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
+Nasleduje štruktúru článku. Základná definícia, ktorá bola naznačená v úvode, je podrobnejšie vysvetlená v časti~\ref{def}.
+Využitie samotnej VR je uvedené v časti~\ref{vuz}. Programová časť softwéru v podsekcii ~\ref{ina}.
 Záverečné poznámky prináša časť~\ref{zaver}.
 
 
 
-\section{Nejaká časť} \label{nejaka}
+\section{Definícia} \label{def}
+V tejto sekcií si určíme pár pojmov, s ktorými budeme následne v článku pracovať.
+\vspace{25mm}
 
-Z obr.~\ref{f:rozhod} je všetko jasné. 
+\emph{Virtuálna realita}, ďalej v článku ako (VR), je použitie počítačovej technológie na vytvorenie simulovaného prostredia. Na rozdiel od tradičných používateľských rozhraní, VR umiestňuje používateľa do zážitku. Namiesto toho, aby sa používatelia pozerali na obrazovku pred sebou, sú ponorení a schopní interagovať s 3D svetmi.\vspace{5mm}\cite{joebardie_2020}
 
-\begin{figure*}[tbh]
-\centering
+\emph{Rozšírená realita}, ďalej v článku ako (AR), je vylepšená verzia skutočného fyzického sveta, ktorá sa dosahuje pomocou digitálnych vizuálnych prvkov, zvuku alebo iných zmyslových podnetov dodávaných prostredníctvom technológie.\vspace{5mm}\cite{joebardie_2020}
+
+\emph{Unreal Engine}, ďalej v článku ako (UE4), je sowtvér , ktorý sa využíva na  vývoj aplikácií s technológiou v reálnom čase. Tvorcom z rôznych odvetví dáva slobodu a kontrolu, aby mohli poskytovať zábavu a presvedčivé vizualizácie.\vspace{5mm}
+%cite https://www.unrealengine.com/en-US/unreal
+
+\emph{Real time technológia}, je popis operačného systému, ktorý reaguje na externú udalosť v krátkom a predvídateľnom časovom rámci. Na rozdiel od dávkového alebo časovo zdieľaného operačného systému, operačný systém v reálnom čase poskytuje služby alebo riadenie nezávislým prebiehajúcim fyzickým procesom.\vspace{5mm}
+%cite https://www.gartner.com/en/information-technology/glossary/real-time
+
+\emph{CadTools} ďalej v článku ako (CAD), je toolbox vyvinutý pre stavebných inžinierov používajúcich AutoCAD. Je to softvér, ktorý podporuje proces navrhovania ciest, koľajníc, mostov atď. Užitočný pre menšie dizajnérske práce prevažne v reálnom 3D.\vspace{5mm}
+%cite https://www.glamsen.se/CadTools.htm
+
+% Úpravy textu, na neskoršie využitie:
+%\begin{figure*}[tbh]
+%\centering
 %\includegraphics[scale=1.0]{diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
-\label{f:rozhod}
-\end{figure*}
+%Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
+%\caption{Rozhodujúci argument.}
+%\label{f:rozhod}
+%\end{figure*}
+% multi cite ~\cite{Czarnecki:Staged, 
+%\emph ctrl+I
+%\vspace{estetika mm}
+%Zoznam 
+%\begin{itemize}
+%\item jedna vec
+%\item druhá vec
+%	\begin{itemize}
+%	\item x
+%	\item y
+%	\end{itemize}
+%\end{itemize}
+%
+%Ten istý zoznam, len číslovaný:
+%
+%\begin{enumerate}
+%\item jedna vec
+%\item druhá vec
+%	\begin{enumerate}
+%	\item x
+%	\item y
+%	\end{enumerate}
+%\end{enumerate}
+%\footnote{poznámku pod čiarou.}
+%Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).
 
 
 
-\section{Iná časť} \label{ina}
+\section{Rozlíšenie AR a VR} \label{vuz}
+Rozšírená realita simuluje umelé objekty v reálnom prostredí; Virtuálna realita vytvára umelé prostredie na obývanie.\vspace{5mm}
 
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
+V rozšírenej realite počítač používa senzory a algoritmy na určenie polohy a orientácie kamery. Technológia AR potom vykresľuje 3D grafiku tak, ako by sa javila z pohľadu kamery, pričom prekrýva počítačom vygenerované obrázky nad pohľadom používateľa na skutočný svet.\cite{hayes_2021}\vspace{5mm}
 
-Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
+Vo virtuálnej realite počítač používa podobné senzory a matematiku. Namiesto umiestnenia skutočnej kamery vo fyzickom prostredí sa však poloha očí používateľa nachádza v simulovanom prostredí. Ak sa hlava používateľa otočí, grafika podľa toho zareaguje. Namiesto skladania virtuálnych objektov a reálnej scény vytvára technológia VR pre používateľa presvedčivý, interaktívny svet.
 
+\cite{hayes_2021}\vspace{20mm}
 
-\subsection{Nejaké vysvetlenie} \label{ina:nejake}
+\section{Programy VR} \label{ina}
+VR môže ponúknuť veľa hodnôt pre vzdelávanie, avšak na vývoj aplikácií treba využiť rôzne nástroje. 
 
-Niekedy treba uviesť zoznam:
-
-\begin{itemize}
-\item jedna vec
-\item druhá vec
-	\begin{itemize}
-	\item x
-	\item y
-	\end{itemize}
-\end{itemize}
-
-Ten istý zoznam, len číslovaný:
-
+Tu je zoznam aplikácií, ktoré zohrávajú význam.
 \begin{enumerate}
-\item jedna vec
-\item druhá vec
-	\begin{enumerate}
-	\item x
-	\item y
-	\end{enumerate}
-\end{enumerate}
+\item Unity
+\item CRYENGINE
+\item Unreal Engine4
+\end{enumerate} 
+
+\subsection {Unity}
+
+Je softvérové riešenie pre vývojárov hier a obsahu v reálnom čase, ktoré je poháňané nástrojmi a službami, ktoré pomáhajú vytvárať interaktívny obsah.
+Vďaka editoru typu všetko v jednom je aplikácia kompatibilná so systémami Windows, Mac a Linux.
+Podporuje 2D aj 3D obsah s množstvom vlastných dostupných nástrojov
+
+Pomocou Unity môžete napríklad vytvárať riešenia VR pre automobilový priemysel, dopravu, výrobu, médiá, strojárstvo či stavebníctvo.
+Pri používaní Unity môžete získať cennú sadu nástrojov, napr.:
+
+Výkonný editor na vytváranie prostriedkov Unity 3D VR;
+Nástroje pre umelcov a dizajnérov
+CAD nástroje
+Nástroje na kolaboráciu s inými tvorcami
+\cite{devteam_2021}
+
+\subsection {Unreal Engine}
+Unreal Engine 4  ponúka výkonnú sadu nástrojov na vývoj VR. S UE4 môžete vytvárať aplikácie VR, ktoré budú fungovať na rôznych platformách VR, napríklad Oculus, Sony, Samsung Gear VR, Android, iOS, Google VR atď.
+
+Platforma UE4 má mnoho funkcií, napr.:
+
+Ponúka prístup k jeho zdrojovému kódu C++ a skriptom Python, takže každý vývojár VR vo vašom tíme môže podrobne študovať engine a naučiť sa ho používať.
+UE4 má rámec pre viacerých hráčov, vykresľovanie vizuálov v reálnom čase a flexibilný editor.
+Pomocou vizuálneho skriptovacieho nástroja Blueprint, ktorý ponúka UE4, môžete rýchlo vytvárať prototypy.
+Je ľahké pridať animáciu, sekvenciu, zvuk, simuláciu, efekty atď.
+\cite{devteam_2021}
 
 
-\subsection{Ešte nejaké vysvetlenie} \label{ina:este}
+\subsection {CRYENGINE}
+CRYENGINE, ktorý je dobre známy vývojárom 3D hier, je robustnou voľbou pre nástroj na vývoj softvéru VR. Môžete s ním vytvárať aplikácie pre virtuálnu realitu, ktoré budú fungovať s populárnymi platformami VR, ako sú Oculus Rift, PlayStation 4, Xbox One atď.
 
-\paragraph{Veľmi dôležitá poznámka.}
-Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
+CRYENGINE ponúka rôzne funkcie, napr.:
+
+Do svojej aplikácie môžete začleniť vynikajúce vizuálne prvky.
+Vytvorenie VR aplikácie alebo VR hry je s CRYENGINE jednoduché, pretože ponúka sandbox a ďalšie relevantné nástroje.
+Môžete ľahko vytvárať postavy.
+Existujú vstavané zvukové riešenia.
+S CRYENGINE si môžete vytvoriť vizualizáciu a interakciu v reálnom čase, ktorá vašim zainteresovaným stranám poskytuje pohlcujúci zážitok.
+\cite{devteam_2021}
 
 
 
-\section{Dôležitá časť} \label{dolezita}
+\section{Ešte nejaké vysvetlenie} 
 
-
-
-
-\section{Ešte dôležitejšia časť} \label{dolezitejsia}
 
 
 
 
 \section{Záver} \label{zaver} % prípadne iný variant názvu
 
+Úvodom simulačných technológií virtuálnej reality vo vzdelávacom procese
+zvyšuje efektivitu vzdelávania, podporuje rozvoj odborného myslenia študentov,
+zdokonaľuje kvalitu rozvoja odbornej spôsobilosti.\vspace{5mm}
+
+Práve využitie moderných VR simulátorov pomáha nájsť nové prístupy a
+formovanie profesionálnych kompetencií budúcich povolaní s
+odklonom od tradičného vyučovania, v prospech požiadaviek doby
+a úspechov vedy a techniky.
+\cite{lvov2019simulation}
 
 
 %\acknowledgement{Ak niekomu chcete poďakovať\ldots}
