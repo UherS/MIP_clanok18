@@ -23,7 +23,7 @@
 	{\small \texttt{xuhers@stuba.sk}}
 	}
 
-\date{\small 1.november 2021} % upravte
+\date{\small 1.november 2021} 
 
 
 \begin{document}
@@ -58,7 +58,7 @@ Záverečné poznámky prináša časť~\ref{zaver}.
 
 \section{Definícia} \label{def}
 V tejto sekcií si určíme pár pojmov, s ktorými budeme následne v článku pracovať.
-\vspace{25mm}
+\vspace{25mm}	
 
 \emph{Virtuálna realita}, ďalej v článku ako (VR), je použitie počítačovej technológie na vytvorenie simulovaného prostredia. Na rozdiel od tradičných používateľských rozhraní, VR umiestňuje používateľa do zážitku. Namiesto toho, aby sa používatelia pozerali na obrazovku pred sebou, sú ponorení a schopní interagovať s 3D svetmi.\vspace{5mm}\cite{joebardie_2020}
 
@@ -70,8 +70,15 @@ V tejto sekcií si určíme pár pojmov, s ktorými budeme následne v článku 
 \emph{Real time technológia}, je popis operačného systému, ktorý reaguje na externú udalosť v krátkom a predvídateľnom časovom rámci. Na rozdiel od dávkového alebo časovo zdieľaného operačného systému, operačný systém v reálnom čase poskytuje služby alebo riadenie nezávislým prebiehajúcim fyzickým procesom.\vspace{5mm}
 %cite https://www.gartner.com/en/information-technology/glossary/real-time
 
-\emph{CadTools} ďalej v článku ako (CAD), je toolbox vyvinutý pre stavebných inžinierov používajúcich AutoCAD. Je to softvér, ktorý podporuje proces navrhovania ciest, koľajníc, mostov atď. Užitočný pre menšie dizajnérske práce prevažne v reálnom 3D.\vspace{5mm}
+\emph{CadTools},ďalej v článku ako (CAD), je toolbox vyvinutý pre stavebných inžinierov používajúcich AutoCAD. Je to softvér, ktorý podporuje proces navrhovania ciest, koľajníc, mostov atď. Užitočný pre menšie dizajnérske práce prevažne v reálnom 3D.\vspace{5mm}
 %cite https://www.glamsen.se/CadTools.htm
+
+\emph{Blue print} Vizuálny skriptovací nástroja, pomocou ktorého v UE4, môžete rýchlo vytvárať prototypy.
+
+\emph{HMD devices}, ďalej v článku ako {HMD}, %v dodatočne doplním vo finálnej verzii
+
+
+
 
 % Úpravy textu, na neskoršie využitie:
 %\begin{figure*}[tbh]
@@ -116,7 +123,7 @@ V rozšírenej realite počítač používa senzory a algoritmy na určenie polo
 
 Vo virtuálnej realite počítač používa podobné senzory a matematiku. Namiesto umiestnenia skutočnej kamery vo fyzickom prostredí sa však poloha očí používateľa nachádza v simulovanom prostredí. Ak sa hlava používateľa otočí, grafika podľa toho zareaguje. Namiesto skladania virtuálnych objektov a reálnej scény vytvára technológia VR pre používateľa presvedčivý, interaktívny svet.
 
-\cite{hayes_2021}\vspace{20mm}
+\cite{hayes_2021}\vspace{15mm}
 
 \section{Programy VR} \label{ina}
 VR môže ponúknuť veľa hodnôt pre vzdelávanie, avšak na vývoj aplikácií treba využiť rôzne nástroje. 
@@ -135,47 +142,57 @@ Vďaka editoru typu všetko v jednom je aplikácia kompatibilná so systémami W
 Podporuje 2D aj 3D obsah s množstvom vlastných dostupných nástrojov
 
 Pomocou Unity môžete napríklad vytvárať riešenia VR pre automobilový priemysel, dopravu, výrobu, médiá, strojárstvo či stavebníctvo.
-Pri používaní Unity môžete získať cennú sadu nástrojov, napr.:
 
-Výkonný editor na vytváranie prostriedkov Unity 3D VR;
-Nástroje pre umelcov a dizajnérov
-CAD nástroje
-Nástroje na kolaboráciu s inými tvorcami
+Pri používaní Unity môžete získať nástroje, ako napríklad:
+\begin {itemize}
+\item Výkonný editor na vytváranie prostriedkov Unity 3D VR
+\item Nástroje pre umelcov a dizajnérov
+\item CAD nástroje
+\item Nástroje na kolaboráciu s inými tvorcami
+\end {itemize}
 \cite{devteam_2021}
 
 \subsection {Unreal Engine}
-Unreal Engine 4  ponúka výkonnú sadu nástrojov na vývoj VR. S UE4 môžete vytvárať aplikácie VR, ktoré budú fungovať na rôznych platformách VR, napríklad Oculus, Sony, Samsung Gear VR, Android, iOS, Google VR atď.
+Unreal Engine 4  ponúka výkonnú sadu nástrojov na vývoj VR.
+S UE4 môžete vytvárať aplikácie VR, ktoré budú fungovať na rôznych platformách VR, napríklad Oculus, Sony, Samsung Gear VR, Android, iOS, Google VR.
 
-Platforma UE4 má mnoho funkcií, napr.:
+Platforma UE4 má mnoho funkcií, ako napríklad:
+\begin {itemize}
+\item Ponúka prístup k jeho zdrojovému kódu C++ a skriptom Python
 
-Ponúka prístup k jeho zdrojovému kódu C++ a skriptom Python, takže každý vývojár VR vo vašom tíme môže podrobne študovať engine a naučiť sa ho používať.
-UE4 má rámec pre viacerých hráčov, vykresľovanie vizuálov v reálnom čase a flexibilný editor.
-Pomocou vizuálneho skriptovacieho nástroja Blueprint, ktorý ponúka UE4, môžete rýchlo vytvárať prototypy.
-Je ľahké pridať animáciu, sekvenciu, zvuk, simuláciu, efekty atď.
+(takže vývojár VR vo vašom tíme môže podrobne študovať engine a naučiť sa ho používať)
+\item UE4 má rámec pre viacerých hráčov, vykresľovanie vizuálov v reálnom čase a flexibilný editor
+\item Je ľahké pridať animáciu, sekvenciu, zvuk, simuláciu, efekty
+\end {itemize}
 \cite{devteam_2021}
 
 
 \subsection {CRYENGINE}
-CRYENGINE, ktorý je dobre známy vývojárom 3D hier, je robustnou voľbou pre nástroj na vývoj softvéru VR. Môžete s ním vytvárať aplikácie pre virtuálnu realitu, ktoré budú fungovať s populárnymi platformami VR, ako sú Oculus Rift, PlayStation 4, Xbox One atď.
+CRYENGINE, ktorý je dobre známy vývojárom 3D hier, je robustnou voľbou pre nástroj na vývoj softvéru VR. 
+Môžete s ním vytvárať aplikácie pre virtuálnu realitu, ktoré budú fungovať s populárnymi platformami VR, ako sú Oculus Rift, PlayStation 4, Xbox One.
 
-CRYENGINE ponúka rôzne funkcie, napr.:
+CRYENGINE ponúka rôzne funkcie, ako napríklad:
 
-Do svojej aplikácie môžete začleniť vynikajúce vizuálne prvky.
-Vytvorenie VR aplikácie alebo VR hry je s CRYENGINE jednoduché, pretože ponúka sandbox a ďalšie relevantné nástroje.
-Môžete ľahko vytvárať postavy.
-Existujú vstavané zvukové riešenia.
-S CRYENGINE si môžete vytvoriť vizualizáciu a interakciu v reálnom čase, ktorá vašim zainteresovaným stranám poskytuje pohlcujúci zážitok.
+\begin {itemize}
+\item Do svojej aplikácie môžete začleniť vizuálne prvky.
+\item Vytvorenie VR aplikácie alebo VR hry pomocou sandboxu.
+\item Môžete ľahko vytvárať postavy.
+\item Existujú vstavané zvukové riešenia.
+\item Môžete si vytvoriť vizualizáciu a interakciu v reálnom čase.
+\end {itemize}
 \cite{devteam_2021}
 
 
 
-\section{Ešte nejaké vysvetlenie} 
+\section{Využitie VR vo svete} 
+% v tejto sekcii sme chceli poukázať na vyuźitie VR v určitých  odvetviach (finalna verzia)
+
+\section{Rozdelenie HMD devices}  
+%Porovnanie samotných HMD devices (finalna verzia)
 
 
 
-
-
-\section{Záver} \label{zaver} % prípadne iný variant názvu
+\section{Záver} \label{zaver} 
 
 Úvodom simulačných technológií virtuálnej reality vo vzdelávacom procese
 zvyšuje efektivitu vzdelávania, podporuje rozvoj odborného myslenia študentov,
@@ -188,10 +205,6 @@ a úspechov vedy a techniky.
 \cite{lvov2019simulation}
 
 
-%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
-
-
-% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
 \bibliography{literatura}
-\bibliographystyle{abbrv} % prípadne alpha, abbrv alebo hociktorý iný
+\bibliographystyle{abbrv} 
 \end{document}
